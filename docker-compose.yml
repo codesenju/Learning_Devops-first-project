@@ -5,7 +5,7 @@ services:
       dockerfile: terraform.Dockerfile
       context: .
     environment:
-      AWS_ACCESS_KEY_ID: AKIAJZ62UA54ER3TGLQQ
+      AWS_ACCESS_KEY_ID: AKIA****
       AWS_SECRET_ACCESS_KEY: ****
       AWS_REGION: af-south-1
       AWS_DEFAULT_REGION: af-south-1
