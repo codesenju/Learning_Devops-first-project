@@ -6,7 +6,7 @@ services:
       context: .
     environment:
       AWS_ACCESS_KEY_ID: AKIAJZ62UA54ER3TGLQQ
-      AWS_SECRET_ACCESS_KEY: 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
+      AWS_SECRET_ACCESS_KEY: ****
       AWS_REGION: af-south-1
       AWS_DEFAULT_REGION: af-south-1
   selenium:
