@@ -23,7 +23,7 @@ resource "aws_s3_bucket" "website" {
                                        Websites need to be publicly-available
                                        to the Internet for website hosting to
                                        work. */
-  policy = "${data.aws_iam_policy_document.bucket_policy.json}"
+  policy = data.aws_iam_policy_document.bucket_policy.json
   website {
     index_document = "index.htm"   // The root of the website.
     error_document = "error.htm"   // The page to show when people hit invalid pages.
