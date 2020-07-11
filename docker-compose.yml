@@ -1,12 +1,22 @@
 version: '3.7'
 services:
+  jenkins:
+    build:
+      dockerfile: jenkins.Dockerfile
+      context: .
+    user: root
+    volumes:
+      - $PWD/jenkins_home:/var/jenkins_home
+      - $PWD:/app
+    ports:
+      - 8080:8080
   aws:
     build:
       dockerfile: aws.Dockerfile
       context: .
     environment:
-      AWS_ACCESS_KEY_ID: AKIAJXIKOGN62JQVDDFA
-      AWS_SECRET_ACCESS_KEY: 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
+      AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
+      AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
       AWS_REGION: af-south-1
       AWS_DEFAULT_REGION: af-south-1
   terraform:
@@ -14,8 +24,8 @@ services:
       dockerfile: terraform.Dockerfile
       context: .
     environment:
-      AWS_ACCESS_KEY_ID: AKIAJXIKOGN62JQVDDFA
-      AWS_SECRET_ACCESS_KEY: 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
+      AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
+      AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
       AWS_REGION: af-south-1
       AWS_DEFAULT_REGION: af-south-1
   selenium:
